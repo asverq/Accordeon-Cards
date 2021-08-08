@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(138deg,
+      rgb(1, 2, 34) 0%,
+      rgb(30, 9, 121) 35%,
+      rgb(7, 0, 17) 100%);
+  font-family: 'Muli', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  height: 80vh;
+  min-width: 65px;
+  flex: 1;
+  margin: 0 10px;
+  position: relative;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in-out;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.99) 10%,
+      rgba(192, 193, 194, 0.1) 100%);
+  border-radius: 18px;
+}
+
+.slide.active::before {
+  background: transparent;
+}
+
+.slide.active {
+  flex: 10;
+}
+
+.slide.active h3 {
+  transform: rotate(0deg);
+  bottom: 45px;
+  left: 20px;
+}
+
+.slide h3 {
+  margin: 0;
+  padding: 0;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  transform: rotate(-90deg);
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+}
