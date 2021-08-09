@@ -1,8 +1,15 @@
 const slides = document.querySelectorAll('.slide');
 
-slides.forEach(slide => {
-    slide.addEventListener('click', () => {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slide.classList.add('active');
+function slidesPlugin(activeSlide = 0) {
+    slides[activeSlide].classList.add('active');
+    slides.forEach(slide => {
+        slide.addEventListener('mouseover', changeAction)
     })
-})
+}
+
+function changeAction() {
+    slides.forEach((el) => el.classList.remove('active'))
+    this.classList.add('active')
+}
+
+slidesPlugin(1)
