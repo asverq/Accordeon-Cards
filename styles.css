@@ -33,7 +33,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 .slide::before {
@@ -75,5 +75,5 @@ body {
   transform: rotate(-90deg);
   font-size: 20px;
   text-transform: uppercase;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in 0.1s;
 }
